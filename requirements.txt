@@ -7,3 +7,6 @@ ultralytics
 opencv-python
 pillow
 numpy
+timm
+monai
+scikit-learn
