@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Brain Tumor Detection and Classification</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: #f4f7fb;
+        margin: 0;
+        padding: 30px;
+      }
+
+      .container {
+        max-width: 950px;
+        margin: auto;
+        background: white;
+        padding: 24px;
+        border-radius: 12px;
+        box-shadow: 0 0 12px rgba(0, 0, 0, 0.08);
+      }
+
+      h1 {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      form {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      input[type="file"] {
+        margin: 12px 0;
+      }
+
+      button {
+        background: #2563eb;
+        color: white;
+        border: none;
+        padding: 10px 18px;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 15px;
+      }
+
+      button:hover {
+        background: #1d4ed8;
+      }
+
+      .error {
+        color: red;
+        font-weight: bold;
+        text-align: center;
+        margin-top: 15px;
+      }
+
+      .messages {
+        margin-top: 20px;
+        padding: 15px;
+        background: #eef6ff;
+        border-radius: 10px;
+      }
+
+      .messages h3 {
+        margin-top: 0;
+      }
+
+      .messages p {
+        margin: 8px 0;
+      }
+
+      .result {
+        margin-top: 20px;
+        text-align: center;
+      }
+
+      .result img {
+        max-width: 100%;
+        border-radius: 10px;
+        border: 1px solid #ddd;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Brain Tumor Detection and Classification System</h1>
+
+      <form method="POST" enctype="multipart/form-data">
+        <input type="file" name="image" required />
+        <br />
+        <button type="submit">Analyze MRI</button>
+      </form>
+
+      {% if error %}
+      <div class="error">{{ error }}</div>
+      {% endif %} {% if messages %}
+      <div class="messages">
+        <h3>Final Decision</h3>
+        {% for msg in messages %}
+        <p>{{ msg }}</p>
+        {% endfor %}
+      </div>
+      {% endif %} {% if result_image %}
+      <div class="result">
+        <h3>Annotated Result</h3>
+        <img src="/{{ result_image }}" alt="Result Image" />
+      </div>
+      {% endif %}
+    </div>
+  </body>
+</html>

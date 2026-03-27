@@ -1,0 +1,32 @@
+# Virtual Environment
+venv/
+env/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Jupyter
+.ipynb_checkpoints/
+
+# System files
+.DS_Store
+
+# Dataset & training outputs
+dataset/
+runs/
+outputs/
+docs/
+notebooks/
+frontend/
+
+# Uploaded & generated images
+static/uploads/*
+static/outputs/*
+
+# Keep empty folders
+!static/uploads/.gitkeep
+!static/outputs/.gitkeep
+
+# Logs
+*.log
