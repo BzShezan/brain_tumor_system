@@ -5,7 +5,7 @@ from ultralytics import YOLO
 
 app = Flask(__name__)
 
-YOLO_MODEL_PATH = "runs/detect/outputs/yolo_brain_tumor/weights/best.pt"
+YOLO_MODEL_PATH = "models/best.pt"
 UPLOAD_DIR = "static/uploads"
 
 os.makedirs(UPLOAD_DIR, exist_ok=True)

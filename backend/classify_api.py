@@ -9,7 +9,7 @@ from torchvision import transforms, models
 app = Flask(__name__)
 
 DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-RESNET_MODEL_PATH = "outputs/brain_tumor_resnet18.pth"
+RESNET_MODEL_PATH = "models/brain_tumor_resnet18.pth"
 UPLOAD_DIR = "static/uploads"
 
 os.makedirs(UPLOAD_DIR, exist_ok=True)
