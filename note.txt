@@ -1,0 +1,11 @@
+python backend/detect_api.py
+
+http://127.0.0.1:5001
+
+python backend/classify_api.py
+
+http://127.0.0.1:5002/
+
+python backend/main_app.py
+
+http://127.0.0.1:5000
